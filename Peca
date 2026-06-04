@@ -1,0 +1,65 @@
+public abstract class Peca {
+
+    // linha atual da peça no tabuleiro
+    protected int linha;
+
+    // coluna atual da peça no tabuleiro
+    protected int coluna;
+
+    // define a cor da peça
+    // true = branca
+    // false = preta
+    protected boolean branca;
+
+    // construtor da peça
+    public Peca(int linha, int coluna, boolean branca) {
+
+        // salva a linha inicial
+        this.linha = linha;
+
+        // salva a coluna inicial
+        this.coluna = coluna;
+
+        // salva a cor da peça
+        this.branca = branca;
+    }
+
+    // método abstrato
+    // cada peça vai implementar sua própria regra de movimento
+    public abstract boolean movimentoValido(int novaLinha, int novaColuna);
+
+    // retorna a linha atual
+    public int getLinha() {
+        return linha;
+    }
+
+    // altera a linha da peça
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    // retorna a coluna atual
+    public int getColuna() {
+        return coluna;
+    }
+
+    // altera a coluna da peça
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+
+    // verifica se a peça é branca
+    public boolean isBranca() {
+        return branca;
+    }
+
+    // move a peça para outra posição
+    public void mover(int novaLinha, int novaColuna) {
+
+        // atualiza a linha
+        this.linha = novaLinha;
+
+        // atualiza a coluna
+        this.coluna = novaColuna;
+    }
+}
