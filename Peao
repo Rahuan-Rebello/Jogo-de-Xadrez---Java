@@ -1,0 +1,22 @@
+public class Peao extends Peca {
+
+    // Construtor do peão
+    public Peao(int linha, int coluna, boolean branca) {
+        super(linha, coluna, branca);
+    }
+
+    @Override
+    public boolean movimentoValido(int novaLinha, int novaColuna) {
+
+        // Peão branco ataca para cima
+        if (branca) {
+
+            return novaLinha == linha - 1 &&
+                   novaColuna == coluna;
+        }
+
+        // Peão preto ataca para baixo
+        return novaLinha == linha + 1 &&
+               novaColuna == coluna;
+    }
+}
