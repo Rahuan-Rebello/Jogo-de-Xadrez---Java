@@ -1,0 +1,25 @@
+public class Rainha extends Peca {
+
+    // Construtor da rainha
+    public Rainha(int linha, int coluna, boolean branca) {
+        super(linha, coluna, branca);
+    }
+
+    @Override
+    public boolean movimentoValido(int novaLinha, int novaColuna) {
+
+        int deltaLinha = Math.abs(novaLinha - linha);
+        int deltaColuna = Math.abs(novaColuna - coluna);
+
+        // Movimento igual da torre
+        boolean movimentoReto =
+                linha == novaLinha ||
+                coluna == novaColuna;
+
+        // Movimento igual do bispo
+        boolean movimentoDiagonal =
+                deltaLinha == deltaColuna;
+
+        return movimentoReto || movimentoDiagonal;
+    }
+}
