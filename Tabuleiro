@@ -1,0 +1,85 @@
+public class Tabuleiro {
+
+    // matriz 8x8 que representa o tabuleiro
+    // cada posição pode guardar uma peça
+    private Peca[][] casas;
+
+    // construtor do tabuleiro
+    public Tabuleiro() {
+
+        // cria o tabuleiro com 8 linhas e 8 colunas
+        casas = new Peca[8][8];
+    }
+
+    // coloca uma peça em uma posição
+    public void colocarPeca(Peca peca, int linha, int coluna) {
+
+        // coloca a peça na posição informada
+        casas[linha][coluna] = peca;
+    }
+
+    // retorna a peça de uma posição
+    public Peca getPeca(int linha, int coluna) {
+
+        // devolve a peça da casa escolhida
+        return casas[linha][coluna];
+    }
+
+    // remove uma peça do tabuleiro
+    public void removerPeca(int linha, int coluna) {
+
+        // deixa a posição vazia
+        casas[linha][coluna] = null;
+    }
+
+    // verifica se existe peça na posição
+    public boolean temPeca(int linha, int coluna) {
+
+        // retorna true se existir peça
+        return casas[linha][coluna] != null;
+    }
+
+    // move uma peça de uma posição para outra
+    public void moverPeca(int linhaOrigem, int colunaOrigem,
+                           int linhaDestino, int colunaDestino) {
+
+        // pega a peça da posição inicial
+        Peca peca = casas[linhaOrigem][colunaOrigem];
+
+        // coloca a peça na nova posição
+        casas[linhaDestino][colunaDestino] = peca;
+
+        // remove a peça da posição antiga
+        casas[linhaOrigem][colunaOrigem] = null;
+
+        // atualiza a posição da peça
+        peca.mover(linhaDestino, colunaDestino);
+    }
+
+    // imprime o tabuleiro no console
+    public void mostrarTabuleiro() {
+
+        // percorre as linhas
+        for (int linha = 0; linha < 8; linha++) {
+
+            // percorre as colunas
+            for (int coluna = 0; coluna < 8; coluna++) {
+
+                // verifica se existe peça
+                if (casas[linha][coluna] == null) {
+
+                    // casa vazia
+                    System.out.print("[ ]");
+                } else {
+
+                    // mostra a inicial da peça
+                    System.out.print("[P]");
+                }
+            }
+
+            // quebra linha do console
+            System.out.println();
+        }
+    }
+}
+
