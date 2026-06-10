@@ -2,7 +2,7 @@ package com.game;
 
 public class Cavalo extends Peca {
 
-    // Construtor do cavalo
+  
     public Cavalo(int linha, int coluna, boolean branca) {
         super(linha, coluna, branca);
     }
