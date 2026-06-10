@@ -9,7 +9,7 @@ public class Bot {
     public void realizarJogada(Tabuleiro tabuleiro) {
         List<Movimento> movimentosPossiveis = new ArrayList<>();
 
-        // 1. Mapear todos os movimentos possíveis para peças pretas
+     
         for (int l = 0; l < 8; l++) {
             for (int c = 0; c < 8; c++) {
                 Peca p = tabuleiro.getPeca(l, c);
@@ -27,14 +27,14 @@ public class Bot {
 
         if (movimentosPossiveis.isEmpty()) return;
 
-        // 2. Avaliar cada movimento para encontrar o "melhor"
+        
         Movimento melhorMovimento = null;
         int melhorPontuacao = -9999;
 
         for (Movimento m : movimentosPossiveis) {
             int pontuacaoAtual = avaliarMovimento(m, tabuleiro);
             
-            // Adiciona um fator aleatório para o Bot não ser totalmente previsível
+            
             pontuacaoAtual += new Random().nextInt(10);
 
             if (pontuacaoAtual > melhorPontuacao) {
@@ -43,7 +43,7 @@ public class Bot {
             }
         }
 
-        // 3. Executa o melhor movimento encontrado
+    
         if (melhorMovimento != null) {
             tabuleiro.moverPeca(melhorMovimento.deLinha, melhorMovimento.deColuna, 
                                 melhorMovimento.paraLinha, melhorMovimento.paraColuna);
@@ -53,12 +53,12 @@ public class Bot {
     private int avaliarMovimento(Movimento m, Tabuleiro tabuleiro) {
         Peca destino = tabuleiro.getPeca(m.paraLinha, m.paraColuna);
         
-        // Se capturar uma peça, o valor do movimento é o valor da peça capturada
+       
         if (destino != null) {
             return obterValorPeca(destino);
         }
         
-        // Se for um movimento simples, damos uma pontuação neutra
+   
         return 0;
     }
 
