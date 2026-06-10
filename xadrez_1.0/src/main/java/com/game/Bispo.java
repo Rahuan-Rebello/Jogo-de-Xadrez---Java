@@ -1,0 +1,20 @@
+package com.game;
+
+public class Bispo extends Peca {
+
+    // Construtor do bispo
+    public Bispo(int linha, int coluna, boolean branca) {
+        super(linha, coluna, branca);
+    }
+
+   @Override
+    public boolean movimentoValido(int novaLinha, int novaColuna, Tabuleiro tabuleiro) {
+
+        // Calcula a distância percorrida
+        int deltaLinha = Math.abs(novaLinha - linha);
+        int deltaColuna = Math.abs(novaColuna - coluna);
+
+        // O bispo move somente em diagonal
+        return deltaLinha == deltaColuna;
+    }
+}

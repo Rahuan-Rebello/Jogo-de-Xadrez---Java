@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+
+<GridPane fx:id="gradeTabuleiro" 
+          xmlns:fx="http://javafx.com/fxml" 
+          fx:controller="com.game.PrimaryController"
+          alignment="CENTER" 
+          prefWidth="480" prefHeight="480">
+</GridPane>

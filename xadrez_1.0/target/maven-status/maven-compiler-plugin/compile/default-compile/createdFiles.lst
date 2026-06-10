@@ -1,0 +1,10 @@
+com\game\Peca.class
+com\game\Torre.class
+com\game\Tabuleiro.class
+com\game\App.class
+com\game\PrimaryController.class
+com\game\Rei.class
+com\game\Cavalo.class
+module-info.class
+com\game\Rainha.class
+com\game\Bispo.class

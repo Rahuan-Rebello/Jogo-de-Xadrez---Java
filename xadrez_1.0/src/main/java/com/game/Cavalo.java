@@ -1,0 +1,19 @@
+package com.game;
+
+public class Cavalo extends Peca {
+
+    // Construtor do cavalo
+    public Cavalo(int linha, int coluna, boolean branca) {
+        super(linha, coluna, branca);
+    }
+
+    @Override
+    public boolean movimentoValido(int novaLinha, int novaColuna, Tabuleiro tabuleiro) {
+        int deltaLinha = Math.abs(novaLinha - linha);
+        int deltaColuna = Math.abs(novaColuna - coluna);
+
+        // Movimento em L
+        return (deltaLinha == 2 && deltaColuna == 1)
+                || (deltaLinha == 1 && deltaColuna == 2);
+    }
+}
