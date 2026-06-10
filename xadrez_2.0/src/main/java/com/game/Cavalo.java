@@ -12,11 +12,10 @@ public class Cavalo extends Peca {
         int dLinha = Math.abs(novaLinha - linha);
         int dColuna = Math.abs(novaColuna - coluna);
 
-        // Geometria do L
+     
         boolean ehMovimentoL = (dLinha == 2 && dColuna == 1) || (dLinha == 1 && dColuna == 2);
         if (!ehMovimentoL) return false;
 
-        // Apenas verifica se o destino é um aliado
         return !destinoEhAliado(novaLinha, novaColuna, tabuleiro);
     }
 }
