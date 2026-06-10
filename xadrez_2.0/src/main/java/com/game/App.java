@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     public static boolean modoContraBot = false;
-    public static boolean deveCarregar = false; // Flag para avisar o controlador
+    public static boolean deveCarregar = false; 
 
     @Override
     public void start(Stage primaryStage) {
@@ -52,7 +52,7 @@ public class App extends Application {
 
         btnCarregar.setOnAction(e -> {
             modoContraBot = true;
-            deveCarregar = true; // Avisa que deve carregar
+            deveCarregar = true; 
             carregarJogo(stage);
         });
 
